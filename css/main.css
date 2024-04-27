@@ -1,0 +1,56 @@
+body {
+    background-color: #fefefe;
+    font-family: Helvetica,  Arial,  sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav p {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    font-size: 15rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    width: 60vw;
+    height: 60vh;
+    margin: auto auto;
+    
+    
+}
+
+#content {
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    height: 50vh;
+    width: 50vw;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+
+
+#content h1 {
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    background-image: url(../images/takeoffobit.jpg.webp);
+    background-size: cover;
+}
