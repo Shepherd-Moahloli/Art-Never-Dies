@@ -60,6 +60,12 @@ image.addEventListener('click', function() {
 
 var songs = ['audio/Takeoff-Casper-(HiphopKit.com).mp3', 'audio/Takeoff-Insomnia-(JustNaija.com).mp3', 'audio/Takeoff-Last-Memory-(JustNaija.com).mp3', 'audio/Takeoff-Lead-The-Wave-(JustNaija.com).mp3'];
 
+var songNames = [' CASPER ', ' INSOMNIA ', ' LAST MEMORY ', ' LEAD THE WAVE ', ]
+
+
+var songNameElement = document.querySelector('.songName');
+
+
 
 songIndex = 0;
 
@@ -70,6 +76,7 @@ forwardIcon.addEventListener('click', function() {
 
     songIndex = (songIndex + 1) % songs.length;
     audio.src = songs[songIndex];
+    songNameElement.textContent = '"' + songNames[songIndex] + '"';
 
     if (wasPlaying) {
         audio.play();
@@ -84,11 +91,67 @@ backwardIcon.addEventListener('click', function() {
 
     songIndex = (songIndex - 1) % songs.length;
     audio.src = songs[songIndex];
-    
+    songNameElement.textContent = '"' + songNames[songIndex] + '"';
+
     if (wasPlaying) {
 
         audio.play();
     }
+});
+
+audio.addEventListener('ended', function() {
+    // Increment the song index and wrap around to the start if necessary
+    songIndex = (songIndex + 1) % songs.length;
+    // Update the src of the audio element
+    audio.src = songs[songIndex];
+    // Play the new song
+    songNameElement.textContent = '"' + songNames[songIndex] + '"';
+
+    audio.play();
+});
+
+var timeSpan = document.getElementById('time');
+
+audio.addEventListener('timeupdate', function() {
+    var currentTime = audio.currentTime;
+    var duration = audio.duration;
+    // Convert the time to minutes and seconds
+    var currentMinutes = Math.floor(currentTime / 60);
+    var currentSeconds = Math.floor(currentTime % 60);
+    var durationMinutes = Math.floor(duration / 60);
+    var durationSeconds = Math.floor(duration % 60);
+    // Add leading zeros if necessary
+    currentMinutes = currentMinutes < 10 ? '0' + currentMinutes : currentMinutes;
+    currentSeconds = currentSeconds < 10 ? '0' + currentSeconds : currentSeconds;
+    durationMinutes = durationMinutes < 10 ? '0' + durationMinutes : durationMinutes;
+    durationSeconds = durationSeconds < 10 ? '0' + durationSeconds : durationSeconds;
+    // Update the text content of the span
+    timeSpan.textContent = currentMinutes + ':' + currentSeconds + ' / ' + durationMinutes + ':' + durationSeconds;
+});
+
+window.addEventListener('keydown', function(event) {
+    // Check if the key that was pressed was the space bar
+    if (event.code === 'Space') {
+        // Prevent the default action to stop the page from scrolling
+        event.preventDefault();
+        // Toggle the play/pause state of the audio
+        if (audio.paused) {
+            audio.play();
+            image.src = image2;
+            intervalId = setInterval(updateImage, 3000);
+        } else {
+            audio.pause();
+            image.src = image1;
+            clearInterval(intervalId);
+        }
+    }
+});
+
+var progressBar = document.getElementById('progressBar');
+
+audio.addEventListener('timeupdate', function() {
+    var percentage = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = percentage + '%';
 });
 
 
