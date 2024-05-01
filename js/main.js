@@ -58,6 +58,39 @@ image.addEventListener('click', function() {
 });
 
 
+var songs = ['audio/Takeoff-Casper-(HiphopKit.com).mp3', 'audio/Takeoff-Insomnia-(JustNaija.com).mp3', 'audio/Takeoff-Last-Memory-(JustNaija.com).mp3', 'audio/Takeoff-Lead-The-Wave-(JustNaija.com).mp3'];
+
+
+songIndex = 0;
+
+
+forwardIcon.addEventListener('click', function() {
+
+    var wasPlaying = !audio.paused;
+
+    songIndex = (songIndex + 1) % songs.length;
+    audio.src = songs[songIndex];
+
+    if (wasPlaying) {
+        audio.play();
+    }
+});
+
+
+
+backwardIcon.addEventListener('click', function() {
+
+    var wasPlaying = !audio.paused;
+
+    songIndex = (songIndex - 1) % songs.length;
+    audio.src = songs[songIndex];
+    
+    if (wasPlaying) {
+
+        audio.play();
+    }
+});
+
 
 
 
