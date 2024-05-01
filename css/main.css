@@ -37,10 +37,11 @@ main {
     color: #fff;
     display: grid;
     place-items: center;
-    height: 50vh;
-    width: 50vw;
+    height: 45vh;
+    width: 45vw;
     overflow: hidden;
     border-radius: 2rem;
+    margin-top: 1rem;
 }
 
 
@@ -53,4 +54,35 @@ main {
 #content {
     background-image: url(../images/takeoffobit.jpg.webp);
     background-size: cover;
+}
+
+main ul {
+
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    padding: 0 2rem;
+    
+}
+
+main ul img {
+    width: 2rem;
+}
+
+#tracklist ul {
+    position: absolute;
+    left: 0;
+    top: 45%;
+}
+
+#tracklist ul h3 {
+    padding: 0;
+    margin: 0;
+}
+
+
+#tracklist ul li {
+    color: gray;
 }

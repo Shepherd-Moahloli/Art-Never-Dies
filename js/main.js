@@ -11,7 +11,7 @@ img.onerror = function() {
 
 
 
-var images = ['images/takeoff1.jpeg', 'images/takeoff.jpeg', 'images/takeoff-obit-eulogy.jpg.webp', 'images/takeoffobit.jpg.webp'];
+var images = ['images/takeoff1.jpeg', 'images/takeoff.jpeg', 'images/takeoff-obit-eulogy.jpg.webp', 'images/takeoffobit.jpg.webp', 'images/takeoff-1-2.jpg.webp'];
 
 var index = 0;
 
