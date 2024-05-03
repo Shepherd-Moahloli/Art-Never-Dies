@@ -193,10 +193,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var nightDayDiv = document.getElementById("night-day");
 var img = nightDayDiv.querySelector("img");
+var audio = document.getElementById('audio'); // Replace with your audio element's id
 
 var playImg = document.getElementById("playbutton");
 var fastforwardImg = document.getElementById("fastforward");
 var backwardsImg = document.getElementById("backwards");
+
+
 
 nightDayDiv.addEventListener("click", function () {
   var body = document.body;
@@ -204,6 +207,8 @@ nightDayDiv.addEventListener("click", function () {
     img.src = "images/moon-solid-white.svg";
     body.style.backgroundColor = "black";
     body.style.color = "white";
+
+    
 
     playImg.src = 'images/play-solid-white.svg';
         fastforwardImg.src = 'images/forward-solid-white.svg';
@@ -218,4 +223,25 @@ nightDayDiv.addEventListener("click", function () {
         fastforwardImg.src = 'images/forward-solid.svg';
         backwardsImg.src = 'images/backward-solid.svg';
   }
+
+audio.addEventListener('play', function() {
+    if (body.style.backgroundColor === 'black') {
+        playImg.src = 'images/pause-solid-white.svg';
+    } else {
+        playImg.src = 'images/pause-solid.svg';
+    }
 });
+
+audio.addEventListener('pause', function() {
+    if (body.style.backgroundColor === 'black') {
+        playImg.src = 'images/play-solid-white.svg';
+    } else {
+        playImg.src = 'images/play-solid.svg';
+    }
+
+});
+
+
+});
+
+
