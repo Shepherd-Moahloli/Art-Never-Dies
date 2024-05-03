@@ -188,3 +188,22 @@ document.addEventListener('DOMContentLoaded', function() {
         dragging = false;
     });
 });
+
+
+
+    var nightDayDiv = document.getElementById('night-day');
+    var img = nightDayDiv.querySelector('img');
+
+    nightDayDiv.addEventListener('click', function() {
+        var body = document.body;
+        if (img.src.endsWith('sun-solid.svg')) {
+            img.src = 'images/moon-solid-white.svg';
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+        } else {
+            img.src = 'images/sun-solid.svg';
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+
+        }
+    });

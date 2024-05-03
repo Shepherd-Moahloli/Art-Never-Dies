@@ -16,7 +16,7 @@ nav p {
 }
 
 header {
-    font-size: 15rem;
+    font-size: 13rem;
     padding: 0;
     margin: 0;
     text-align: center;
@@ -119,10 +119,27 @@ main ul img {
 }
 
 #playstore  #time {
-    background-color: white;
+    
     display: grid;
     place-items: center;
     font-size: 0.7rem;
     padding-left: 0.5rem;
    
+}
+
+.conditions {
+    height: 1.5rem;
+}
+
+
+#night-day img {
+   height: 1.5rem;
+    padding: 2rem;
+    justify-content: start;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+#night-day img:hover {
+    opacity: 1;
 }
