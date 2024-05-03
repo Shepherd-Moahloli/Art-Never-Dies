@@ -147,14 +147,44 @@ window.addEventListener('keydown', function(event) {
     }
 });
 
-var progressBar = document.getElementById('progressBar');
+document.addEventListener('DOMContentLoaded', function() {
+    var progressBar = document.getElementById('progressBar');
+    var trackLength = document.getElementById('trackLength');
+    var dragging = false;
 
-audio.addEventListener('timeupdate', function() {
-    var percentage = (audio.currentTime / audio.duration) * 100;
-    progressBar.style.width = percentage + '%';
+    function updateProgressBar() {
+        var percentage = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = percentage + '%';
+    }
+
+    audio.addEventListener('timeupdate', function() {
+        if (!dragging) {
+            updateProgressBar();
+        }
+    });
+
+    trackLength.addEventListener('mousedown', function(event) {
+        dragging = true;
+        var rect = trackLength.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var percentage = x / rect.width;
+        var newTime = percentage * audio.duration;
+        audio.currentTime = newTime;
+        updateProgressBar();
+    });
+
+    trackLength.addEventListener('mousemove', function(event) {
+        if (dragging) {
+            var rect = trackLength.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var percentage = x / rect.width;
+            var newTime = percentage * audio.duration;
+            audio.currentTime = newTime;
+            updateProgressBar();
+        }
+    });
+
+    trackLength.addEventListener('mouseup', function() {
+        dragging = false;
+    });
 });
-
-
-
-
-
