@@ -29,11 +29,10 @@ body {
 }
 
 #navigate {
-    display: grid;
-    place-items: center;
+    
     width: 70%;
     height: 100%;
-    margin: 0 auto;
+    margin: 15rem auto;
     
 }
 
@@ -47,6 +46,19 @@ body {
 
 #navigate ul li:hover {
     font-weight: bold;
+}
+
+#icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+
+#icons img {
+    width: 2rem;
+    padding: 0 1rem;
 }
 
 
