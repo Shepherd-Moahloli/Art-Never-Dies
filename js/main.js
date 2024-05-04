@@ -253,6 +253,35 @@ audio.addEventListener('pause', function() {
 });
 
 
+
+
 });
+
+var menuImg = document.getElementById('menu');
+var overlay = document.getElementById('overlay');
+var closeButton = document.getElementById('close');
+
+
+menuImg.addEventListener('click', function() {
+    if (overlay.style.visibility !== 'visible') {
+        overlay.style.visibility = 'visible';
+        if (body.style.backgroundColor === 'black') {
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        } else {
+            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        }
+        menuImg.src = 'images/close-solid.svg';
+    } else {
+        overlay.style.visibility = 'hidden';
+        menuImg.src = 'images/bars-solid.svg';
+    }
+});
+
+closeButton.addEventListener('click', function() {
+    overlay.style.visibility = 'hidden';
+    menuImg.src = 'images/bars-solid.svg';
+});
+
+// Rest of your code...
 
 
