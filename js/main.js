@@ -44,17 +44,24 @@ var image1 = "images/play-solid.svg";
 var image2 = "images/pause-solid.svg";
 
 image.addEventListener("click", function () {
-  if (image.src.endsWith(image1)) {
-    image.src = image2;
-    audio.play();
-    intervalId = setInterval(updateImage, 3000);
-  } else {
-    image.src = image1;
-    audio.pause();
-    clearInterval(intervalId);
-  }
-});
-
+    if (audio.paused) {
+      audio.play();
+      if (body.style.backgroundColor === 'black') {
+          image.src = 'images/pause-solid-white.svg';
+          image.style.height = '1.5rem';
+      } else {
+          image.src = 'images/pause-solid.svg';
+      }
+    } else {
+      audio.pause();
+      if (body.style.backgroundColor === 'black') {
+          image.src = 'images/play-solid-white.svg';
+          image.style.height = '1.5rem';
+      } else {
+          image.src = 'images/play-solid.svg';
+      }
+    }
+  });
 var songs = [
   "audio/Takeoff-Casper-(HiphopKit.com).mp3",
   "audio/Takeoff-Insomnia-(JustNaija.com).mp3",
@@ -198,6 +205,8 @@ var audio = document.getElementById('audio'); // Replace with your audio element
 var playImg = document.getElementById("playbutton");
 var fastforwardImg = document.getElementById("fastforward");
 var backwardsImg = document.getElementById("backwards");
+var menuImg = document.getElementById('menu').querySelector('img');
+
 
 
 
@@ -213,6 +222,7 @@ nightDayDiv.addEventListener("click", function () {
     playImg.src = 'images/play-solid-white.svg';
         fastforwardImg.src = 'images/forward-solid-white.svg';
         backwardsImg.src = 'images/backward-solid-white.svg';
+        menuImg.src = 'images/bars-solid-white.svg';
     
   } else {
     img.src = "images/sun-solid.svg";
@@ -222,6 +232,7 @@ nightDayDiv.addEventListener("click", function () {
     playImg.src = 'images/play-solid.svg';
         fastforwardImg.src = 'images/forward-solid.svg';
         backwardsImg.src = 'images/backward-solid.svg';
+        menuImg.src = 'images/bars-solid.svg'
   }
 
 audio.addEventListener('play', function() {

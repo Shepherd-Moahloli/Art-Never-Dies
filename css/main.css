@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+
 nav {
     text-align: center;
 }
@@ -129,7 +130,12 @@ main ul img {
 
 .conditions {
     height: 1.5rem;
+    display: flex;
+    
 }
+
+
+
 
 
 #night-day img {
@@ -137,9 +143,27 @@ main ul img {
     padding: 2rem;
     justify-content: start;
     cursor: pointer;
-    opacity: 0.4;
+    opacity: 0.4;   
+    
 }
 
 #night-day img:hover {
+    opacity: 1;
+}
+
+#menu {
+    position: absolute;
+    right: 0;
+    padding: 2rem;
+}
+
+#menu img {
+    width: 1.5rem;
+    justify-content: flex-end;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+#menu img:hover {
     opacity: 1;
 }
