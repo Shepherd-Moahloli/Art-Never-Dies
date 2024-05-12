@@ -253,8 +253,6 @@ audio.addEventListener('pause', function() {
 });
 
 
-
-
 });
 
 var menuImg = document.getElementById('menu');
