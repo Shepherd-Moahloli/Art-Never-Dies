@@ -223,6 +223,7 @@ nightDayDiv.addEventListener("click", function () {
         fastforwardImg.src = 'images/forward-solid-white.svg';
         backwardsImg.src = 'images/backward-solid-white.svg';
         menuImg.src = 'images/bars-solid-white.svg';
+        console.log(menuImg.src);
     
   } else {
     img.src = "images/sun-solid.svg";
@@ -263,7 +264,7 @@ var closeButton = document.getElementById('close');
 menuImg.addEventListener('click', function() {
     if (overlay.style.visibility !== 'visible') {
         overlay.style.visibility = 'visible';
-        if (body.style.backgroundColor === 'black') {
+        if (document.body.style.backgroundColor === 'black') {
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
         } else {
             overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
