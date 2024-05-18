@@ -205,35 +205,39 @@ var audio = document.getElementById('audio'); // Replace with your audio element
 var playImg = document.getElementById("playbutton");
 var fastforwardImg = document.getElementById("fastforward");
 var backwardsImg = document.getElementById("backwards");
-var menuImg = document.getElementById('menu').querySelector('img');
+var menuBlackImg = document.getElementById('menu-black'); // Added this line
+var menuWhiteImg = document.getElementById('menu-white');
 
 
 
 
 nightDayDiv.addEventListener("click", function () {
+  
   var body = document.body;
   if (img.src.endsWith("sun-solid.svg")) {
     img.src = "images/moon-solid-white.svg";
     body.style.backgroundColor = "black";
     body.style.color = "white";
-
+    body.classList.add('black-background'); 
     
 
     playImg.src = 'images/play-solid-white.svg';
         fastforwardImg.src = 'images/forward-solid-white.svg';
         backwardsImg.src = 'images/backward-solid-white.svg';
-        menuImg.src = 'images/bars-solid-white.svg';
-        console.log(menuImg.src);
+        menuBlackImg.style.display = 'none'; // Added this line
+        menuWhiteImg.style.display = 'block';
     
   } else {
     img.src = "images/sun-solid.svg";
     body.style.backgroundColor = "white";
     body.style.color = "black";
+    body.classList.remove('black-background');
 
     playImg.src = 'images/play-solid.svg';
         fastforwardImg.src = 'images/forward-solid.svg';
         backwardsImg.src = 'images/backward-solid.svg';
-        menuImg.src = 'images/bars-solid.svg'
+        menuBlackImg.style.display = 'block'; // Added this line
+        menuWhiteImg.style.display = 'none';
   }
 
 audio.addEventListener('play', function() {
@@ -254,31 +258,50 @@ audio.addEventListener('pause', function() {
 });
 
 
+
+
 });
+
+
 
 var menuImg = document.getElementById('menu');
 var overlay = document.getElementById('overlay');
 var closeButton = document.getElementById('close');
+var closeBlackImg = document.getElementById('close-black');
+var closeWhiteImg = document.getElementById('close-white');
 
 
 menuImg.addEventListener('click', function() {
     if (overlay.style.visibility !== 'visible') {
         overlay.style.visibility = 'visible';
-        if (document.body.style.backgroundColor === 'black') {
-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        if (document.body.classList.contains('black-background')) { // Changed this line
+          overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            menuImg.src = 'images/images/xmark-solid-white.svg';
+            closeWhiteImg.style.display = 'block';
         } else {
             overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            menuImg.src = 'images/xmark-solid.svg';
+
+            
         }
-        menuImg.src = 'images/close-solid.svg';
+
     } else {
         overlay.style.visibility = 'hidden';
-        menuImg.src = 'images/bars-solid.svg';
+        if (document.body.classList.contains('black-background')) { // Changed this line
+          menuImg.src = 'images/bars-solid-white.svg';
+      } else {
+          menuImg.src = 'images/bars-solid.svg';
+      }
     }
 });
 
 closeButton.addEventListener('click', function() {
     overlay.style.visibility = 'hidden';
-    menuImg.src = 'images/bars-solid.svg';
+    if (document.body.classList.contains('black-background')) { // Changed this line
+      menuImg.src = 'images/bars-solid-white.svg'; // Changed this line
+  } else {
+      menuImg.src = 'images/bars-solid.svg';
+  }
 });
 
 // Rest of your code...
