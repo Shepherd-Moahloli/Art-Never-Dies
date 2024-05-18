@@ -226,6 +226,10 @@ nightDayDiv.addEventListener("click", function () {
         backwardsImg.src = 'images/backward-solid-white.svg';
         menuBlackImg.style.display = 'none'; // Added this line
         menuWhiteImg.style.display = 'block';
+        volumeIcon.style.display = 'none';
+        volumeIconWhite.style.display = 'block'; // show white volume icon
+        muteIconWhite.style.display = 'none'; // hide white mute icon
+        muteIcon.style.display = 'none';
     
   } else {
     img.src = "images/sun-solid.svg";
@@ -238,7 +242,12 @@ nightDayDiv.addEventListener("click", function () {
         backwardsImg.src = 'images/backward-solid.svg';
         menuBlackImg.style.display = 'block'; // Added this line
         menuWhiteImg.style.display = 'none';
+        volumeIcon.style.display = 'block';
+    volumeIconWhite.style.display = 'none'; // hide white volume icon
+    muteIconWhite.style.display = 'none'; // hide white mute icon
+    muteIcon.style.display = 'none';
   }
+  
 
 audio.addEventListener('play', function() {
     if (body.style.backgroundColor === 'black') {
@@ -332,17 +341,34 @@ closeButton.addEventListener('click', function() {
 var volumeIcon = document.getElementById('volume-icon');
 var muteIcon = document.getElementById('mute-icon');
 var volumeControl = document.getElementById('volume');
+var volumeIconWhite = document.getElementById('volume-icon-white'); // white volume icon
+var muteIconWhite = document.getElementById('mute-icon-white'); // white mute icon
 
 volumeIcon.addEventListener('click', function() {
+  if (document.body.classList.contains('black-background')) { // if background is black
     volumeIcon.style.display = 'none';
-    muteIcon.style.display = 'block';
-   
+    volumeIconWhite.style.display = 'block'; // show white volume icon
+    muteIconWhite.style.display = 'none'; // hide white mute icon
+  } else {
+    volumeIcon.style.display = 'none';
+    muteIcon.style.display = 'block'; // show regular mute icon
+    volumeIconWhite.style.display = 'none'; // hide white volume icon
+    muteIconWhite.style.display = 'none'; // hide white mute icon
+  }
 });
 
 muteIcon.addEventListener('click', function() {
+  if (document.body.classList.contains('black-background')) { // if background is black
     muteIcon.style.display = 'none';
-    volumeIcon.style.display = 'block';
-   
+    muteIconWhite.style.display = 'block'; // show white mute icon
+    volumeIconWhite.style.display = 'none'; // hide white volume icon
+    volumeIcon.style.display = 'none'; // hide regular volume icon
+  } else {
+    muteIcon.style.display = 'none';
+    volumeIcon.style.display = 'block'; // show regular volume icon
+    volumeIconWhite.style.display = 'none'; // hide white volume icon
+    muteIconWhite.style.display = 'none'; // hide white mute icon
+  }
 });
 
 // Rest of your code...
