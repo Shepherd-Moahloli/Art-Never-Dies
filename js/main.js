@@ -263,6 +263,12 @@ audio.addEventListener('pause', function() {
 });
 
 
+var instagramBlackImg = document.getElementById('instagram-black');
+var instagramWhiteImg = document.getElementById('instagram-white');
+var twitterBlackImg = document.getElementById('twitter-black');
+var twitterWhiteImg = document.getElementById('twitter-white');
+var youtubeBlackImg = document.getElementById('youtube-black');
+var youtubeWhiteImg = document.getElementById('youtube-white');
 
 var menuImg = document.getElementById('menu');
 var overlay = document.getElementById('overlay');
@@ -278,10 +284,25 @@ menuImg.addEventListener('click', function() {
           overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
             menuImg.src = 'images/images/xmark-solid-white.svg';
             closeWhiteImg.style.display = 'block';
+            closeBlackImg.style.display = 'none';
+            instagramBlackImg.style.display = 'none';
+            instagramWhiteImg.style.display = 'block';
+            twitterBlackImg.style.display = 'none';
+            twitterWhiteImg.style.display = 'block';
+            youtubeBlackImg.style.display = 'none';
+            youtubeWhiteImg.style.display = 'block';
+
         } else {
             overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
             menuImg.src = 'images/xmark-solid.svg';
-
+            closeWhiteImg.style.display = 'none';
+            closeBlackImg.style.display = 'block';
+            instagramBlackImg.style.display = 'block';
+            instagramWhiteImg.style.display = 'none';
+            twitterBlackImg.style.display = 'block';
+            twitterWhiteImg.style.display = 'none';
+            youtubeBlackImg.style.display = 'block';
+            youtubeWhiteImg.style.display = 'none';
             
         }
 
@@ -299,8 +320,12 @@ closeButton.addEventListener('click', function() {
     overlay.style.visibility = 'hidden';
     if (document.body.classList.contains('black-background')) { // Changed this line
       menuImg.src = 'images/bars-solid-white.svg'; // Changed this line
+      closeWhiteImg.style.display = 'none'; // Hide white close icon
+      closeBlackImg.style.display = 'block';
   } else {
       menuImg.src = 'images/bars-solid.svg';
+      closeWhiteImg.style.display = 'block'; // Show white close icon
+      closeBlackImg.style.display = 'none'; 
   }
 });
 
