@@ -329,6 +329,22 @@ closeButton.addEventListener('click', function() {
   }
 });
 
+var volumeIcon = document.getElementById('volume-icon');
+var muteIcon = document.getElementById('mute-icon');
+var volumeControl = document.getElementById('volume');
+
+volumeIcon.addEventListener('click', function() {
+    volumeIcon.style.display = 'none';
+    muteIcon.style.display = 'block';
+   
+});
+
+muteIcon.addEventListener('click', function() {
+    muteIcon.style.display = 'none';
+    volumeIcon.style.display = 'block';
+   
+});
+
 // Rest of your code...
 
 

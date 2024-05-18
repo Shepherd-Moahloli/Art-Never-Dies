@@ -148,7 +148,7 @@ main ul img {
 #playstore {
     width: 70%;
     display: grid;
-    grid-template-columns: 10% 10% 10% 55% 15%;
+    grid-template-columns: 10% 10% 10% 50% 15% 5%;
 
 }
 
@@ -227,3 +227,29 @@ main ul img {
 }
 
 
+.vertical-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 10px !important;
+    width: 10px !important;
+    border-radius: 50%;
+    background: grey;
+}
+
+.vertical-volume::-moz-range-thumb {
+    border: none;
+    height: 10px !important;
+    width: 10px !important;
+    border-radius: 50%;
+    background: grey;
+}
+
+.volume-icon {
+    height: 30px; /* Set the height as per your requirement */
+    width: auto; /* This will maintain the aspect ratio of the image */ 
+}
+
+
+#volume-control {
+    padding-left: 0.5rem;
+}

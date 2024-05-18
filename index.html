@@ -20,8 +20,8 @@
             <ul>
                 <li>HOME</li>
                 <li>ABOUT ARTIST</li>
-                <li>LIST OF ARTISTS</li>
-                <li>LYRICS</li>
+                <li>RELATED ARTISTS</li>
+                <li>MUSIC VIDEOS</li>
                 <li>ALBUMS</li>
                 
             </ul>
@@ -74,9 +74,14 @@
             <span id="time">00:00 / 03:17</span>
             <audio id="audio" src="audio/Takeoff-Casper-(HiphopKit.com).mp3"></audio>
 
+            <div id="volume-control">
+            <img id="volume-icon" class="volume-icon" src="images/volume-high-solid.svg" alt="Volume">
+            <img id="mute-icon"  class="volume-icon" src="images/volume-xmark-solid.svg" alt="Mute" style="display: none;">
+            <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" class="vertical-volume" style="display: none;">
+            </div>
         </div>
 
-
+    </div>
        
         <!--         <div id="tracklist">
         <ul>
