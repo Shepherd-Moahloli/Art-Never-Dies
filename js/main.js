@@ -341,36 +341,48 @@ closeButton.addEventListener('click', function() {
 var volumeIcon = document.getElementById('volume-icon');
 var muteIcon = document.getElementById('mute-icon');
 var volumeControl = document.getElementById('volume');
-var volumeIconWhite = document.getElementById('volume-icon-white'); // white volume icon
-var muteIconWhite = document.getElementById('mute-icon-white'); // white mute icon
+
 
 volumeIcon.addEventListener('click', function() {
   if (document.body.classList.contains('black-background')) { // if background is black
     volumeIcon.style.display = 'none';
-    volumeIconWhite.style.display = 'none'; // show white volume icon
-    muteIconWhite.style.display = 'block'; // hide white mute icon
+    
     console.log('clicked');
   } else {
     volumeIcon.style.display = 'none';
     muteIcon.style.display = 'block'; // show regular mute icon
-    volumeIconWhite.style.display = 'none'; // hide white volume icon
-    muteIconWhite.style.display = 'none'; // hide white mute icon
+    
+    
   }
 });
 
 muteIcon.addEventListener('click', function() {
   if (document.body.classList.contains('black-background')) { // if background is black
     muteIcon.style.display = 'none';
-    muteIconWhite.style.display = 'none'; // show white mute icon
-    volumeIconWhite.style.display = 'block'; // hide white volume icon
+    
     
   } else {
     muteIcon.style.display = 'none';
     volumeIcon.style.display = 'block'; // show regular volume icon
-    volumeIconWhite.style.display = 'none'; // hide white volume icon
-    muteIconWhite.style.display = 'none'; // hide white mute icon
+    
   }
 
+  
+});
+
+var volumeIconWhite = document.getElementById('volume-icon-white');
+var muteIconWhite = document.getElementById('mute-icon-white');
+
+// Add event listener to volumeIconWhite
+volumeIconWhite.addEventListener('click', function() {
+  volumeIconWhite.style.display = 'none'; // hide volumeIconWhite
+  muteIconWhite.style.display = 'block'; // show muteIconWhite
+});
+
+// Add event listener to muteIconWhite
+muteIconWhite.addEventListener('click', function() {
+  muteIconWhite.style.display = 'none'; // hide muteIconWhite
+  volumeIconWhite.style.display = 'block'; // show volumeIconWhite
 });
 
 // Rest of your code...
