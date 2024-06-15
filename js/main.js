@@ -385,6 +385,25 @@ muteIconWhite.addEventListener('click', function() {
   volumeIconWhite.style.display = 'block'; // show volumeIconWhite
 });
 
+
+var audio = document.getElementById('audio');
+
+// Add event listener to volumeIcon
+volumeIcon.addEventListener('click', function() {
+  // Mute the audio
+  audio.volume = 0.0;
+
+  // Rest of your code...
+});
+
+// Add event listener to muteIcon
+muteIcon.addEventListener('click', function() {
+  // Unmute the audio
+  audio.volume = 1.0;
+
+  // Rest of your code...
+});
+
 // Rest of your code...
 
 
