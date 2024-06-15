@@ -198,6 +198,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+var body = document.body;
+
 var nightDayDiv = document.getElementById("night-day");
 var img = nightDayDiv.querySelector("img");
 var audio = document.getElementById('audio'); // Replace with your audio element's id
@@ -213,7 +215,7 @@ var menuWhiteImg = document.getElementById('menu-white');
 
 nightDayDiv.addEventListener("click", function () {
   
-  var body = document.body;
+
   if (img.src.endsWith("sun-solid.svg")) {
     img.src = "images/moon-solid-white.svg";
     body.style.backgroundColor = "black";
