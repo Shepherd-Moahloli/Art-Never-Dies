@@ -347,8 +347,9 @@ var muteIconWhite = document.getElementById('mute-icon-white'); // white mute ic
 volumeIcon.addEventListener('click', function() {
   if (document.body.classList.contains('black-background')) { // if background is black
     volumeIcon.style.display = 'none';
-    volumeIconWhite.style.display = 'block'; // show white volume icon
-    muteIconWhite.style.display = 'none'; // hide white mute icon
+    volumeIconWhite.style.display = 'none'; // show white volume icon
+    muteIconWhite.style.display = 'block'; // hide white mute icon
+    console.log('clicked');
   } else {
     volumeIcon.style.display = 'none';
     muteIcon.style.display = 'block'; // show regular mute icon
@@ -360,15 +361,16 @@ volumeIcon.addEventListener('click', function() {
 muteIcon.addEventListener('click', function() {
   if (document.body.classList.contains('black-background')) { // if background is black
     muteIcon.style.display = 'none';
-    muteIconWhite.style.display = 'block'; // show white mute icon
-    volumeIconWhite.style.display = 'none'; // hide white volume icon
-    volumeIcon.style.display = 'none'; // hide regular volume icon
+    muteIconWhite.style.display = 'none'; // show white mute icon
+    volumeIconWhite.style.display = 'block'; // hide white volume icon
+    
   } else {
     muteIcon.style.display = 'none';
     volumeIcon.style.display = 'block'; // show regular volume icon
     volumeIconWhite.style.display = 'none'; // hide white volume icon
     muteIconWhite.style.display = 'none'; // hide white mute icon
   }
+
 });
 
 // Rest of your code...
