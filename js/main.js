@@ -1,3 +1,4 @@
+
 console.log("Script is running");
 var img = new Image();
 img.src = "images/rocket.png";
@@ -15,6 +16,9 @@ var images = [
   "images/takeoffobit.jpg.webp",
   "images/takeoff-1-2.jpg.webp",
 ];
+
+
+document.addEventListener('DOMContentLoaded', function() {
 
 var index = 0;
 var content = document.getElementById("content");
@@ -34,6 +38,8 @@ function updateImage() {
 // content.addEventListener('mouseout', function() {
 //     intervalId =setInterval(updateImage, 3000);
 // })
+
+});
 
 var image = document.querySelector("#playstore img:nth-child(2)");
 var audio = document.querySelector("#playstore audio");
@@ -209,8 +215,11 @@ var fastforwardImg = document.getElementById("fastforward");
 var backwardsImg = document.getElementById("backwards");
 var menuBlackImg = document.getElementById('menu-black'); // Added this line
 var menuWhiteImg = document.getElementById('menu-white');
+var contentAbout = document.getElementById('content-about');
+var topContent = document.getElementById('top-content');
 
 
+var isFirstClick = true;
 
 
 nightDayDiv.addEventListener("click", function () {
@@ -232,6 +241,11 @@ nightDayDiv.addEventListener("click", function () {
         volumeIconWhite.style.display = 'block'; // show white volume icon
         muteIconWhite.style.display = 'none'; // hide white mute icon
         muteIcon.style.display = 'none';
+
+        if (!isFirstClick) {
+          contentAbout.classList.add('new-bg');
+          topContent.classList.add('new-color');
+        }
     
   } else {
     img.src = "images/sun-solid.svg";
@@ -248,6 +262,11 @@ nightDayDiv.addEventListener("click", function () {
     volumeIconWhite.style.display = 'none'; // hide white volume icon
     muteIconWhite.style.display = 'none'; // hide white mute icon
     muteIcon.style.display = 'none';
+   
+    if (!isFirstClick) {
+      contentAbout.classList.remove('new-bg');
+      topContent.classList.remove('new-color');
+    }
   }
   
 
@@ -269,7 +288,7 @@ audio.addEventListener('pause', function() {
 });
 
 
-
+isFirstClick = false;
 
 });
 
@@ -379,12 +398,17 @@ var muteIconWhite = document.getElementById('mute-icon-white');
 volumeIconWhite.addEventListener('click', function() {
   volumeIconWhite.style.display = 'none'; // hide volumeIconWhite
   muteIconWhite.style.display = 'block'; // show muteIconWhite
+
+  audio.volume = 0.0; // Mute the audio
 });
 
 // Add event listener to muteIconWhite
 muteIconWhite.addEventListener('click', function() {
   muteIconWhite.style.display = 'none'; // hide muteIconWhite
   volumeIconWhite.style.display = 'block'; // show volumeIconWhite
+
+
+  audio.volume = 1.0;
 });
 
 
@@ -407,5 +431,4 @@ muteIcon.addEventListener('click', function() {
 });
 
 // Rest of your code...
-
 
