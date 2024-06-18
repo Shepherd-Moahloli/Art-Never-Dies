@@ -136,7 +136,7 @@ main {
     background-color: #242424; /* replace with the new color you want */
 }
 
-#top-content {
+#top-content, #top-content-related {
     display: grid;
     place-items: center;
    width: 80%;
@@ -147,13 +147,35 @@ main {
    line-height: 1.2rem;
 }
 
+#top-content-related {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 7rem 0;
+    width: 90%;
+    text-align: center;
+}
 
-#top-content img {
+#top-content-related p{
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+
+}
+
+#top-content-related h4 {
+    padding: 0;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+
+#top-content img, #top-content-related img{
   
     width: 10rem;
     border-radius: 1rem;
     
 }
+
 
 #top-content p {
     padding: 0.5rem 0;
