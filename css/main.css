@@ -147,12 +147,15 @@ main {
    line-height: 1.2rem;
 }
 
+
 #top-content-related {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 7rem 0;
-    width: 90%;
+    padding: 2rem 0;
+    width: 92%;
     text-align: center;
+    place-items: center;
+    
 }
 
 #top-content-related p{
@@ -168,12 +171,30 @@ main {
     padding-top: 1rem;
 }
 
+#top-content img, #top-content-related img{
+  
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+
+    
+}
+
+#top-content-related img {
+    margin-top: 1rem;
+}
 
 #top-content img, #top-content-related img{
   
     width: 10rem;
     border-radius: 1rem;
     
+}
+
+
+
+#top-content-related img:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease-in-out;
 }
 
 
@@ -185,6 +206,14 @@ main {
 
 #top-content.new-color {
     color: #fff; /* replace with the new color you want */
+}
+
+#top-content-related #bottom-artists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
+    width: 92%;
+    text-align: center;
 }
 
 main ul {
