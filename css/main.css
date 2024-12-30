@@ -7,7 +7,14 @@ body {
 }
 
 
-body.black-background ul li {
+body.black-background {
+    color: white;
+}
+
+body.black-background ul li,
+body.black-background p,
+body.black-background header,
+body.black-background .songName {
     color: white;
 }
 
