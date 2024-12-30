@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAKEOFF - Music Videos</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="images/rocket-solid.svg" />
+  </head>
+  <body>
+    <div id="overlay">
+      <div id="close">
+        <img id="close-black" src="images/xmark-solid.svg" alt="" />
+        <img
+          id="close-white"
+          src="images/xmark-solid-white.svg"
+          alt=""
+          style="display: none"
+        />
+      </div>
+      <div id="navigate">
+        <ul>
+          <a href="index.html"><li>HOME</li></a>
+          <a href="about-artist.html"><li>ABOUT ARTIST</li></a>
+          <a href="related-artists.html"><li>RELATED ARTISTS</li></a>
+          <a href="music-videos.html"><li>MUSIC VIDEOS</li></a>
+          <li>ALBUMS</li>
+        </ul>
+        <div id="icons">
+          <img id="instagram-black" src="images/instagram.svg" alt="" />
+          <img
+            id="instagram-white"
+            src="images/instagram-white.svg"
+            alt=""
+            style="display: none"
+          />
+          <img id="twitter-black" src="images/x-twitter.svg" alt="" />
+          <img
+            id="twitter-white"
+            src="images/x-twitter-white.svg"
+            alt=""
+            style="display: none"
+          />
+          <img id="youtube-black" src="images/youtube.svg" alt="" />
+          <img
+            id="youtube-white"
+            src="images/youtube-white.svg"
+            alt=""
+            style="display: none"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="conditions">
+        <div id="night-day">
+          <img src="images/sun-solid.svg" alt="" />
+        </div>
+        <div id="menu">
+          <img id="menu-black" src="images/bars-solid.svg" alt="" />
+          <img
+            id="menu-white"
+            src="images/bars-solid-white.svg"
+            alt=""
+            style="display: none"
+          />
+        </div>
+      </div>
+      <nav>
+        <header>TAKEOFF</header>
+        <p class="songName">" MUSIC VIDEOS "</p>
+        <p style="font-size: 1rem; padding-top: 0.5rem; color: gray">
+          1994 - 2022
+        </p>
+      </nav>
+      <main>
+        <div id="content">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/D7F42F_JM3U"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div id="playstore">
+          <img id="backwards" src="images/backward-solid.svg" alt="" />
+          <img id="playbutton" src="images/play-solid.svg" alt="" />
+          <img id="fastforward" src="images/forward-solid.svg" alt="" />
+          <span id="trackLength">
+            <div id="progressBar"></div>
+          </span>
+          <span id="time">00:00 / 03:17</span>
+          <audio
+            id="audio"
+            src="audio/Takeoff-Casper-(HiphopKit.com).mp3"
+          ></audio>
+          <div id="volume-control">
+            <img
+              id="volume-icon"
+              class="volume-icon"
+              src="images/volume-high-solid.svg"
+              alt="Volume"
+            />
+            <img
+              id="mute-icon"
+              class="volume-icon"
+              src="images/volume-xmark-solid.svg"
+              alt="Mute"
+              style="display: none"
+            />
+            <img
+              id="volume-icon-white"
+              class="volume-icon-white"
+              src="images/volume-high-solid-white.svg"
+              alt="Volume"
+              style="display: none"
+            />
+            <img
+              id="mute-icon-white"
+              class="volume-icon-white"
+              src="images/volume-xmark-solid-white.svg"
+              alt="Mute"
+              style="display: none"
+            />
+            <input
+              type="range"
+              id="volume"
+              name="volume"
+              min="0"
+              max="1"
+              step="0.01"
+              class="vertical-volume"
+              style="display: none"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
