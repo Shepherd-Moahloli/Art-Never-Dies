@@ -214,82 +214,84 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-var body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+  var body = document.body;
 
-var nightDayDiv = document.getElementById("night-day");
-var img = nightDayDiv.querySelector("img");
-var audio = document.getElementById("audio"); // Replace with your audio element's id
+  var nightDayDiv = document.getElementById("night-day");
+  var img = nightDayDiv.querySelector("img");
+  var audio = document.getElementById("audio"); // Replace with your audio element's id
 
-var playImg = document.getElementById("playbutton");
-var fastforwardImg = document.getElementById("fastforward");
-var backwardsImg = document.getElementById("backwards");
-var menuBlackImg = document.getElementById("menu-black"); // Added this line
-var menuWhiteImg = document.getElementById("menu-white");
-var contentAbout = document.getElementById("content-about");
-var topContent = document.getElementById("top-content");
+  var playImg = document.getElementById("playbutton");
+  var fastforwardImg = document.getElementById("fastforward");
+  var backwardsImg = document.getElementById("backwards");
+  var menuBlackImg = document.getElementById("menu-black"); // Added this line
+  var menuWhiteImg = document.getElementById("menu-white");
+  var contentAbout = document.getElementById("content-about");
+  var topContent = document.getElementById("top-content");
 
-var isFirstClick = true;
+  var isFirstClick = true;
 
-nightDayDiv.addEventListener("click", function () {
-  if (img.src.endsWith("sun-solid.svg")) {
-    img.src = "images/moon-solid-white.svg";
-    body.style.backgroundColor = "black";
-    body.style.color = "white";
-    body.classList.add("black-background");
+  nightDayDiv.addEventListener("click", function () {
+    if (img.src.endsWith("sun-solid.svg")) {
+      img.src = "images/moon-solid-white.svg";
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+      body.classList.add("black-background");
 
-    playImg.src = "images/play-solid-white.svg";
-    fastforwardImg.src = "images/forward-solid-white.svg";
-    backwardsImg.src = "images/backward-solid-white.svg";
-    menuBlackImg.style.display = "none"; // Added this line
-    menuWhiteImg.style.display = "block";
-    volumeIcon.style.display = "none";
-    volumeIconWhite.style.display = "block"; // show white volume icon
-    muteIconWhite.style.display = "none"; // hide white mute icon
-    muteIcon.style.display = "none";
-
-    if (!isFirstClick) {
-      contentAbout.classList.add("new-bg");
-      topContent.classList.add("new-color");
-    }
-  } else {
-    img.src = "images/sun-solid.svg";
-    body.style.backgroundColor = "white";
-    body.style.color = "black";
-    body.classList.remove("black-background");
-
-    playImg.src = "images/play-solid.svg";
-    fastforwardImg.src = "images/forward-solid.svg";
-    backwardsImg.src = "images/backward-solid.svg";
-    menuBlackImg.style.display = "block"; // Added this line
-    menuWhiteImg.style.display = "none";
-    volumeIcon.style.display = "block";
-    volumeIconWhite.style.display = "none"; // hide white volume icon
-    muteIconWhite.style.display = "none"; // hide white mute icon
-    muteIcon.style.display = "none";
-
-    if (!isFirstClick) {
-      contentAbout.classList.remove("new-bg");
-      topContent.classList.remove("new-color");
-    }
-  }
-
-  audio.addEventListener("play", function () {
-    if (body.style.backgroundColor === "black") {
-      playImg.src = "images/pause-solid-white.svg";
-    } else {
-      playImg.src = "images/pause-solid.svg";
-    }
-  });
-
-  audio.addEventListener("pause", function () {
-    if (body.style.backgroundColor === "black") {
       playImg.src = "images/play-solid-white.svg";
-    } else {
-      playImg.src = "images/play-solid.svg";
-    }
-  });
+      fastforwardImg.src = "images/forward-solid-white.svg";
+      backwardsImg.src = "images/backward-solid-white.svg";
+      menuBlackImg.style.display = "none"; // Added this line
+      menuWhiteImg.style.display = "block";
+      volumeIcon.style.display = "none";
+      volumeIconWhite.style.display = "block"; // show white volume icon
+      muteIconWhite.style.display = "none"; // hide white mute icon
+      muteIcon.style.display = "none";
 
-  isFirstClick = false;
+      if (!isFirstClick) {
+        contentAbout.classList.add("new-bg");
+        topContent.classList.add("new-color");
+      }
+    } else {
+      img.src = "images/sun-solid.svg";
+      body.style.backgroundColor = "white";
+      body.style.color = "black";
+      body.classList.remove("black-background");
+
+      playImg.src = "images/play-solid.svg";
+      fastforwardImg.src = "images/forward-solid.svg";
+      backwardsImg.src = "images/backward-solid.svg";
+      menuBlackImg.style.display = "block"; // Added this line
+      menuWhiteImg.style.display = "none";
+      volumeIcon.style.display = "block";
+      volumeIconWhite.style.display = "none"; // hide white volume icon
+      muteIconWhite.style.display = "none"; // hide white mute icon
+      muteIcon.style.display = "none";
+
+      if (!isFirstClick) {
+        contentAbout.classList.remove("new-bg");
+        topContent.classList.remove("new-color");
+      }
+    }
+
+    audio.addEventListener("play", function () {
+      if (body.style.backgroundColor === "black") {
+        playImg.src = "images/pause-solid-white.svg";
+      } else {
+        playImg.src = "images/pause-solid.svg";
+      }
+    });
+
+    audio.addEventListener("pause", function () {
+      if (body.style.backgroundColor === "black") {
+        playImg.src = "images/play-solid-white.svg";
+      } else {
+        playImg.src = "images/play-solid.svg";
+      }
+    });
+
+    isFirstClick = false;
+  });
 });
 
 var instagramBlackImg = document.getElementById("instagram-black");

@@ -10,6 +10,10 @@ body.black-background ul li {
     color: white;
 }
 
+img {
+    filter: grayscale(100%);   
+}
+
 
 #overlay {
    visibility: hidden;
@@ -191,30 +195,40 @@ body.black-background #content-about::-webkit-scrollbar-thumb:hover {
 #top-content, #top-content-related {
     display: grid;
     place-items: center;
-   width: 80%;
-   margin: 0 auto;
-   color: #000;
-   padding: 2rem 0;
-   text-align: justify;
-   line-height: 1.2rem;
+    width: 80%;
+    margin: 0 auto;
+    color: #000;
+    padding: 2rem 0;
+    text-align: justify;
+    line-height: 1.2rem;
 }
-
 
 #top-content-related {
     display: grid;
+    grid-template-rows: 40% 10% 40%;
     grid-template-columns: repeat(3, 1fr);
-    padding: 2rem 0;
+    padding: 0;
+    margin-top: 10px;
     width: 92%;
     text-align: center;
     place-items: center;
-    
 }
 
-#top-content-related p{
-    padding: 0;
+#top-content-related > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#top-content-related > div:nth-child(n+4) {
+    grid-row: 3; /* Place these divs in the third row */
+}
+
+#top-content-related p {
+    padding:  1rem 0;
     margin: 0;
     font-size: 0.9rem;
-
 }
 
 #top-content-related h4 {
@@ -223,32 +237,20 @@ body.black-background #content-about::-webkit-scrollbar-thumb:hover {
     padding-top: 1rem;
 }
 
-#top-content img, #top-content-related img{
-  
+
+#top-content img, #top-content-related img {
+    width: 10rem; /* Set a consistent width */
+    height: 7rem; /* Set a consistent height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 1rem;
     transition: transform 1s ease-in-out;
     cursor: pointer;
-
-    
-}
-
-#top-content-related img {
     margin-top: 1rem;
 }
 
-#top-content img, #top-content-related img{
-  
-    width: 10rem;
-    border-radius: 1rem;
-    
-}
-
-
-
 #top-content-related img:hover {
     transform: scale(1.1);
-    transition: transform 1s ease-in-out;
 }
-
 
 #top-content p {
     padding: 0.5rem 0;
